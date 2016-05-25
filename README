@@ -6,3 +6,8 @@ https://exchange.nagios.org/directory/Plugins/Hardware/Storage-Systems/RAID-Cont
 ==== v2 ====
 We had problems with this check on dude ... so i checked for an update:
 https://exchange.nagios.org/directory/Plugins/Hardware/Storage-Systems/RAID-Controllers/check_megaraid_sas-v2/details
+
+==== v2.1 ====
+We still had problem on dude.
+I fixed the bug. pushed online.
+

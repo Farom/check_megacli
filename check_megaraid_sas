@@ -219,8 +219,20 @@ ADAPTER: for ( my $adp = 0; $adp < $adapters; $adp++ ) {
 		}
 	}
 	close LDGETNUM;
+
+	# Get the IDs of logical drives on this adapter 
+	open (LDGETLIST, "$megacli -LDInfo -Lall -a$adp $megapostopt |") 
+		|| exitreport('UNKNOWN', "error: Could not execute $megacli -LDInfo -Lall -a$adp $megapostopt");
+	my (@ldlist);
+	while (<LDGETLIST>) {
+		if ( m/^Virtual Drive:.\d..Target Id: (\d+)./i ) {
+			push(@ldlist, $1);
+		}
+	}
+	close LDGETLIST;
+
 	
-	LDISK: for ( my $ld = 0; $ld < $ldnum; $ld++ ) {
+	LDISK: for my $ld (@ldlist) {
 		# Get info on this particular logical drive
 		open (LDINFO, "$megacli -LdInfo -L$ld -a$adp $megapostopt |") 
 			|| exitreport('UNKNOWN', "error: Could not execute $megacli -LdInfo -L$ld -a$adp $megapostopt ");
