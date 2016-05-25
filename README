@@ -2,3 +2,7 @@
 ===== Source =====
 ==== v1 ====
 https://exchange.nagios.org/directory/Plugins/Hardware/Storage-Systems/RAID-Controllers/check_megaraid_sas/details
+
+==== v2 ====
+We had problems with this check on dude ... so i checked for an update:
+https://exchange.nagios.org/directory/Plugins/Hardware/Storage-Systems/RAID-Controllers/check_megaraid_sas-v2/details
