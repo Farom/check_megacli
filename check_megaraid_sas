@@ -150,7 +150,7 @@ ADAPTER: for ( my $adp = 0; $adp < $adapters; $adp++ ) {
 	# Get the Battery Back Up state for this adapter
 	my ($bbustate);
 	if ($checkbbu) {
-		open (BBUGETSTATUS, "$megacli -AdpBbuCmd -GetBbuStatus -a$adp $megapostopt |") 
+		open (BBUGETSTATUS, "$megacli -AdpBbuCmd -GetBbuStatus -a$adp $megapostopt 2>/dev/null |") 
 			|| exitreport('UNKNOWN', "error: Could not execute $megacli -AdpBbuCmd -GetBbuStatus -a$adp $megapostopt");
 		
 		my ($bbucharging, $bbufullycharged, $bburelativecharge, $bbuexitcode);
