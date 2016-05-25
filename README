@@ -1,0 +1,4 @@
+====== Check a MegaRaid Controller and its disks ======
+===== Source =====
+==== v1 ====
+https://exchange.nagios.org/directory/Plugins/Hardware/Storage-Systems/RAID-Controllers/check_megaraid_sas/details
